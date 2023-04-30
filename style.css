@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto+Mono&display=swap');
+
+body,
+input,
+textarea,
+button {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Mono', monospace;
+}
+/* Headline */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4rem;
+  margin: 1rem;
+  align-items: center;
+}
+
+.list-item > a {
+  text-decoration: none;
+  color: #000;
+}
+
+.list-item > a:hover {
+  text-decoration: underline;
+}
+
+.list-items-container {
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+}
+/* Main section */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10rem;
+  gap: 1rem;
+}
+
+.main-container > h1 {
+  text-align: center;
+}
+
+.books,
+fieldset,
+input,
+button,
+header,
+footer {
+  border: 2px solid #000;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+  justify-content: space-around;
+}
+
+.book-info:nth-of-type(odd) {
+  background-color: rgb(185, 185, 185);
+}
+
+.remove-book {
+  width: 6rem;
+  height: 2rem;
+  align-self: center;
+  right: 14rem;
+}
+
+.books,
+form {
+  width: 40rem;
+}
+
+#fieldset-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  width: 18rem;
+}
+
+#add-book {
+  width: 6rem;
+  margin-right: -12rem;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #757373;
+  color: #fff;
+}
+
+.contact-section {
+  position: absolute;
+  top: 14rem;
+}
+/* Footer */
+footer {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 1rem;
+}
+
+.hidden {
+  visibility: hidden;
+}
