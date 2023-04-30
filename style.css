@@ -8,6 +8,7 @@ button {
   padding: 0;
   font-family: 'Roboto Mono', monospace;
 }
+
 /* Headline */
 header {
   display: flex;
@@ -31,6 +32,7 @@ header {
   list-style: none;
   gap: 3rem;
 }
+
 /* Main section */
 .main-container {
   display: flex;
@@ -101,6 +103,7 @@ button:hover {
   position: absolute;
   top: 14rem;
 }
+
 /* Footer */
 footer {
   display: flex;
