@@ -98,19 +98,3 @@ button:hover {
   background-color: #757373;
   color: #fff;
 }
-
-.contact-section {
-  position: absolute;
-  top: 14rem;
-}
-
-/* Footer */
-footer {
-  display: flex;
-  justify-content: center;
-  margin: 3rem 1rem;
-}
-
-.hidden {
-  visibility: hidden;
-}
