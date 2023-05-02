@@ -8,58 +8,77 @@ button {
   padding: 0;
   font-family: 'Roboto Mono', monospace;
 }
+/* Headline */
+header {
+  display: flex;
+  justify-content: center;
+  padding: 0 4rem;
+  margin: 1rem;
+  align-items: center;
+}
+
+/* Main section */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10rem;
+  gap: 1rem;
+}
+
+.main-container > h1 {
+  text-align: center;
+}
+
 .books,
 fieldset,
 input,
 button,
-header {
+header,
+footer {
   border: 2px solid #000;
 }
 
-header {
-    padding: 26px 27rem;
-    margin: 1rem;
-  }
-  .title-logo {
-    display: flex;
-    justify-content: center;
-  }
-.new_books {
-    border: 2px solid #000;
-    width: 40rem;
-    display: flex;
-    flex-direction: column;
-    
+.book-info {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+  justify-content: space-around;
 }
-.books {
-    display: flex;
-    flex-direction: row;
-    gap: 2em;
-    justify-content: space-around;
-}
-.books:nth-of-type(odd) {
-    background-color: rgb(185, 185, 185);
-  }
-button:hover {
-    cursor: pointer;
-    background-color: #757373;
-    color: #fff;
-  }
 
-  .deleteBtn {
-    width: 6rem;
-    height: 2rem;
-    align-self: center;
-    right: 14rem;
-  }
-  #fieldset-1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 20rem;
-    
-  }
-  input {
-    width: 18rem;
-  }
-  
+.book-info:nth-of-type(odd) {
+  background-color: rgb(185, 185, 185);
+}
+
+.remove-book {
+  width: 6rem;
+  height: 2rem;
+  align-self: center;
+  right: 14rem;
+}
+
+.books,
+form {
+  width: 40rem;
+}
+
+#fieldset-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  width: 18rem;
+}
+
+#add-book {
+  width: 6rem;
+  margin-right: -12rem;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #757373;
+  color: #fff;
+}

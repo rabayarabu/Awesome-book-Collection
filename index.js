@@ -1,61 +1,121 @@
-const bookDetails = document.querySelector('.new_books');
-const title = document.querySelector('#new-title');
-const author = document.querySelector('#new-author');
-const button = document.querySelector('#add-book');
-let bookShelves = JSON.parse(localStorage.getItem('bookShelves')) || [];
+/* eslint-disable max-classes-per-file */
+class Book {
+  constructor(title, author) {
+    this.id = Date.now().toString();
+    this.title = title;
+    this.author = author;
+  }
+}
+/* eslint-disable max-classes-per-file */
+class BooksCollection {
+  constructor() {
+    this.books = [];
+  }
 
-// add a new book
-function addNewBook() {
-  if (title.value === '' && author.value === '') {
-    alert('Please fill up all fields');
-  } else {
-    bookShelves.push({
-      id: Math.floor(Math.random() * 1000),
-      title: title.value,
-      author: author.value,
+  addBook(title, author) {
+    if (title === '' || author === '') {
+      // eslint-disable-next-line no-alert
+      alert('Please fill both fields');
+    } else {
+      const newBook = new Book(title, author);
+      this.books.push(newBook);
+    }
+  }
+
+  removeBook(id) {
+    this.books = this.books.filter((book) => book.id !== id);
+  }
+
+  viewBooks() {
+    // Remove all existing book elements from the container
+    const container = document.querySelector('.books');
+    while (container.firstChild) {
+      container.removeChild(container.firstChild);
+    }
+
+    // Update books
+    this.books.forEach((book) => {
+      // Create the container div
+      const bookInfo = document.createElement('div');
+      bookInfo.className = 'book-info';
+      bookInfo.innerHTML = `<p><span class="book-title">"${book.title}"</span> by <span class="book-author"> ${book.author}</span></p>`;
+
+      // Create and append the button
+      const button = document.createElement('button');
+      button.className = 'remove-book';
+      button.type = 'button';
+      button.textContent = 'Remove';
+      button.dataset.id = book.id; // Set the book ID as a data attribute
+      bookInfo.appendChild(button);
+
+      // Add event listener to remove button
+      button.addEventListener('click', (event) => {
+        const { id } = event.target.dataset;
+        this.removeBook(id);
+        this.viewBooks();
+      });
+
+      // Append the container div to the html
+      container.appendChild(bookInfo);
     });
-    localStorage.setItem('bookShelves', JSON.stringify(bookShelves));
+
+    // Update local storage
+    this.saveBooks();
+  }
+
+  saveBooks() {
+    localStorage.setItem('books', JSON.stringify(this.books));
+  }
+
+  loadBooks() {
+    this.books = JSON.parse(localStorage.getItem('books')) || [];
+  }
+
+  init() {
+    this.loadBooks();
+    this.viewBooks();
+
+    // Adding new book
+    const addBookBtn = document.querySelector('#add-book');
+    addBookBtn.addEventListener('click', () => {
+      const form = document.getElementById('form');
+      const title = document.querySelector('#new-title').value;
+      const author = document.querySelector('#new-author').value;
+      this.addBook(title, author);
+      this.viewBooks();
+      form.reset();
+    });
   }
 }
 
-// show the book list
-function showBookList() {
-  const bookLists = JSON.parse(localStorage.getItem('bookShelves'));
-  let container = '';
-  bookLists.forEach((bookList) => {
-    container += `
-    <div class="books">
-      <p class="title">"${bookList.title}"</p>
-      <p class="author">${bookList.author}</p><br>
-      <button class="deleteBtn" id="${bookList.id}" type="submit">Remove</button>
-      <br>
-    </div>
-    `;
-  });
-  bookDetails.innerHTML = container;
-}
-// get item
+const booksCollection = new BooksCollection();
+booksCollection.init();
 
-window.addEventListener('load', () => {
-  showBookList();
+const list = document.querySelector('#book-list');
+const addNew = document.querySelector('#add-new-book');
+const books = document.querySelector('.books');
+const form = document.querySelector('#form');
+
+form.classList.add('hidden');
+addNew.style.textDecoration = 'underline';
+
+list.addEventListener('click', () => {
+  list.style.textDecoration = 'underline';
+  addNew.style.textDecoration = 'none';
+  form.classList.add('hidden');
+  books.classList.remove('hidden');
 });
-// remove
-function removeBook(e) {
-  if (e.target.classList.contains('deleteBtn')) {
-    bookShelves = bookShelves.filter((book) => book.id.toString() !== e.target.id);
 
-    localStorage.setItem('bookShelves', JSON.stringify(bookShelves));
-  }
-  showBookList();
-}
-document.addEventListener('click', removeBook);
+addNew.addEventListener('click', () => {
+  list.style.textDecoration = 'none';
+  addNew.style.textDecoration = 'underline';
+  form.classList.remove('hidden');
+  books.classList.remove('hidden');
+});
 
-// Add
-button.addEventListener('click', (e) => {
-  e.preventDefault();
-
-  addNewBook();
-  showBookList();
-  title.value = '';
-  author.value = '';
+contact.addEventListener('click', () => {
+  list.style.textDecoration = 'none';
+  addNew.style.textDecoration = 'none';
+  form.classList.add('hidden');
+  books.classList.add('hidden');
 });
