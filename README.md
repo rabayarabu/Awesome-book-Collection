@@ -50,10 +50,10 @@
 ### Key Features <a name="key-features"></a>
 
 
-- **[top-fixed navbar]**
-- **[responsive]**
-- **[menu-toggler]**
-- **[page-navigation]**
+- **[semantic HTML tag]**
+- **[javascript object]**
+- **[add function]**
+- **[delete function]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
