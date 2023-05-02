@@ -6,13 +6,13 @@ let bookShelves = JSON.parse(localStorage.getItem('bookShelves')) || [];
 
 // add a new book
 function addNewBook() {
-  if(title.value === '' && author.value === ''){
-    alert("Please fill up all fields");
+  if (title.value === '' && author.value === '') {
+    alert('Please fill up all fields');
   } else {
     bookShelves.push({
-      id : Math.floor(Math.random() * 1000),
-      title : title.value,
-      author : author.value,
+      id: Math.floor(Math.random() * 1000),
+      title: title.value,
+      author: author.value,
     });
     localStorage.setItem('bookShelves', JSON.stringify(bookShelves));
   }
@@ -31,11 +31,10 @@ function showBookList() {
       <br>
     </div>
     `;
-    
-});
-bookDetails.innerHTML = container;
+  });
+  bookDetails.innerHTML = container;
 }
-//get item
+// get item
 
 window.addEventListener('load', () => {
   showBookList();
@@ -50,7 +49,6 @@ function removeBook(e) {
   showBookList();
 }
 document.addEventListener('click', removeBook);
-  
 
 // Add
 button.addEventListener('click', (e) => {
