@@ -112,10 +112,3 @@ addNew.addEventListener('click', () => {
   form.classList.remove('hidden');
   books.classList.remove('hidden');
 });
-
-contact.addEventListener('click', () => {
-  list.style.textDecoration = 'none';
-  addNew.style.textDecoration = 'none';
-  form.classList.add('hidden');
-  books.classList.add('hidden');
-});
