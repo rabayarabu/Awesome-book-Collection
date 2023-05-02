@@ -8,3 +8,58 @@ button {
   padding: 0;
   font-family: 'Roboto Mono', monospace;
 }
+.books,
+fieldset,
+input,
+button,
+header {
+  border: 2px solid #000;
+}
+
+header {
+    padding: 26px 27rem;
+    margin: 1rem;
+  }
+  .title-logo {
+    display: flex;
+    justify-content: center;
+  }
+.new_books {
+    border: 2px solid #000;
+    width: 40rem;
+    display: flex;
+    flex-direction: column;
+    
+}
+.books {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    justify-content: space-around;
+}
+.books:nth-of-type(odd) {
+    background-color: rgb(185, 185, 185);
+  }
+button:hover {
+    cursor: pointer;
+    background-color: #757373;
+    color: #fff;
+  }
+
+  .deleteBtn {
+    width: 6rem;
+    height: 2rem;
+    align-self: center;
+    right: 14rem;
+  }
+  #fieldset-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20rem;
+    
+  }
+  input {
+    width: 18rem;
+  }
+  

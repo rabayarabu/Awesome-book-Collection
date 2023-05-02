@@ -24,8 +24,8 @@ function showBookList() {
   let container = '';
   bookLists.forEach((bookList) => {
     container += `
-    <div>
-      <p class="title">${bookList.title}</p>
+    <div class="books">
+      <p class="title">"${bookList.title}"</p>
       <p class="author">${bookList.author}</p><br>
       <button class="deleteBtn" id="${bookList.id}" type="submit">Remove</button>
       <br>
