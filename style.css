@@ -99,6 +99,11 @@ button:hover {
   color: #fff;
 }
 
+.contact-section {
+  position: absolute;
+  top: 14rem;
+}
+
 footer {
   display: flex;
   justify-content: center;
