@@ -18,6 +18,21 @@ header {
   align-items: center;
 }
 
+.list-item > a {
+  text-decoration: none;
+  color: #000;
+}
+
+.list-item > a:hover {
+  text-decoration: underline;
+}
+
+.list-items-container {
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+}
+
 /* Main section */
 .main-container {
   display: flex;
@@ -82,4 +97,14 @@ button:hover {
   cursor: pointer;
   background-color: #757373;
   color: #fff;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 1rem;
+}
+
+.hidden {
+  visibility: hidden;
 }
