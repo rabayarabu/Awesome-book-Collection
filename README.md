@@ -131,7 +131,7 @@ To run the project, open the html file
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [https://github.com/ghermaico135/awesome-book/issues](../../issues/).
+Feel free to check the [https://github.com/rabayarabu/Awesome-book-Collection/issues](../../issues/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
