@@ -1,4 +1,3 @@
-
 class Book {
   constructor(title, author) {
     this.id = Date.now().toString();
