@@ -1,4 +1,4 @@
-/* eslint-disable max-classes-per-file */
+
 class Book {
   constructor(title, author) {
     this.id = Date.now().toString();
@@ -6,7 +6,7 @@ class Book {
     this.author = author;
   }
 }
-/* eslint-disable max-classes-per-file */
+
 class BooksCollection {
   constructor() {
     this.books = [];
@@ -97,6 +97,7 @@ const contact = document.querySelector('#contact-us');
 const books = document.querySelector('.books');
 const form = document.querySelector('#form');
 const contactSection = document.querySelector('.contact-section');
+const heading = document.getElementById('h1');
 
 form.classList.add('hidden');
 contactSection.classList.add('hidden');
@@ -110,6 +111,7 @@ list.addEventListener('click', () => {
   form.classList.add('hidden');
   books.classList.remove('hidden');
   contactSection.classList.add('hidden');
+  heading.style.display = 'block';
 });
 
 addNew.addEventListener('click', () => {
@@ -128,4 +130,5 @@ contact.addEventListener('click', () => {
   form.classList.add('hidden');
   books.classList.add('hidden');
   contactSection.classList.remove('hidden');
+  heading.style.display = 'none';
 });
