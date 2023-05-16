@@ -59,7 +59,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://https://rabayarabu.github.io/Awesome-book-Collection/)
+- Go <a href="https://https://rabayarabu.github.io/Awesome-book-Collection/">Live</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
